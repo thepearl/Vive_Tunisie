@@ -9,18 +9,30 @@
 import SwiftUI
 
 struct SplashView: View {
+    @State private var half = true
+    @State private var dim = true
     var body: some View {
+        
         VStack(spacing: 25){
             Image("Logo")
-            .resizable()
-            .frame(width: 110, height: 170)
-            
+                .resizable()
+                .scaleEffect(half ? 0.5 : 1.0)
+                .opacity(dim ? 0.2 : 1.0)
+                .frame(width: 110, height: 170)
+                .animation(.easeInOut(duration: 1.0))
+                .onAppear() {
+                    self.dim.toggle()
+                    self.half.toggle()
+                    }
             Text("Vive Tunisie")
                 .font(.largeTitle)
             .foregroundColor(Color("Text"))
-            }.background(Color(.white))
+            
+            }
+        
     }
-}
+    }
+
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
