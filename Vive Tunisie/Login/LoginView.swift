@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LoginView: View {
     @State private var selected=0
+    @State var value :CGFloat = 0
     var body: some View {
         ZStack(){
             Rectangle()
@@ -22,13 +23,14 @@ struct LoginView: View {
             .resizable()
             .frame(width: 220, height: 200)
                 .padding(.all, 10)
-        VStack(spacing: 10){
+        VStack(spacing: 15){
         Picker(selection: $selected, label: Text("")){
             
             Text("Inscrivez vous").tag(1)
             
             Text("Connectez Vous").tag(0)
         }.pickerStyle(SegmentedPickerStyle())
+            
             if(self.selected == 0){
                 LoginCard()
             }
@@ -40,6 +42,18 @@ struct LoginView: View {
         }
         
             }
+        .offset(y: -self.value)
+        .animation(.spring()).onAppear(){
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main){ (noti) in
+                let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                let height = value.height
+                self.value = height
+            }
+            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main){ (n) in
+                           
+                           self.value = 0
+        }
+        }
         }
 }
 

@@ -11,9 +11,10 @@ import SwiftUI
 struct LoginCard: View {
     @State private var email = ""
     @State private var pass = ""
+
+
     var body: some View {
-        VStack(spacing: 10){
-            
+        VStack(spacing: 15){
             HStack{
             Image("Email")
                 .resizable()
@@ -114,7 +115,7 @@ struct LoginCard: View {
                     .cornerRadius(10)
                     
             } // Connect via ..
-            
+                
             Spacer()
             
             Button(action: {
@@ -127,11 +128,13 @@ struct LoginCard: View {
                     Image("Line")
                     .foregroundColor(Color("Blur"))
                 }
-            } // Conditions Generale
+            }   // Conditions Generale
+            Spacer()
+            
         }
-    }
+        
 }
-
+}
 struct LoginCard_Previews: PreviewProvider {
     static var previews: some View {
         LoginCard()

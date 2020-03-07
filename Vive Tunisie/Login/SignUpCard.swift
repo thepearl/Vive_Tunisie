@@ -7,13 +7,17 @@
 //
 
 import SwiftUI
-
 struct SignUpCard: View {
+    @State private var name = ""
+    @State var value : CGFloat = 0
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+         VStack(spacing: 10){
+            TextField("Courrier électronique", text: $name)
+            .foregroundColor(Color("Text"))
+            .keyboardType(.emailAddress)
+        }
 }
-
+}
 struct SignUpCard_Previews: PreviewProvider {
     static var previews: some View {
         SignUpCard()
