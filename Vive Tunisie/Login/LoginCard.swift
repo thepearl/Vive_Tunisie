@@ -127,10 +127,9 @@ struct LoginCard: View {
                     .font(.custom("futura", size: 12))
                     Image("Line")
                     .foregroundColor(Color("Blur"))
-                }
+                }.padding(.bottom, 15)
             }   // Conditions Generale
             
-            Spacer()
             
         }
         

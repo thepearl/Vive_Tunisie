@@ -15,7 +15,7 @@ struct SignUpCard: View {
 
     var body: some View {
       
-         VStack(spacing: 5){
+         VStack(spacing: 10){
              HStack{
              Image("Person")
                  .resizable()
@@ -75,8 +75,8 @@ struct SignUpCard: View {
                 .cornerRadius(15)
                 
             
-                   
-            
+            VStack{
+            Spacer()
              Button(action: {
                  // TODO
              }){
@@ -89,6 +89,7 @@ struct SignUpCard: View {
                  .cornerRadius(10)
                  
              } //Button S'inscrire
+                Spacer()
 
              HStack(spacing: 20){
                  Image("Line")
@@ -97,6 +98,7 @@ struct SignUpCard: View {
                      .foregroundColor(Color("Blur"))
                  Image("Line")
              } // Divider "Ou"
+                Spacer()
              
              HStack(spacing:20){
                  Button(action: {
@@ -136,7 +138,6 @@ struct SignUpCard: View {
                      .cornerRadius(10)
                      
              } // Connect via ..
-                 
              Spacer()
              
              Button(action: {
@@ -150,6 +151,8 @@ struct SignUpCard: View {
                      .foregroundColor(Color("Blur"))
                  }
              }   // Conditions Generale
+                Spacer()
+            }
          }
         }
 
