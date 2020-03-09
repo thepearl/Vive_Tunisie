@@ -129,6 +129,7 @@ struct LoginCard: View {
                     .foregroundColor(Color("Blur"))
                 }
             }   // Conditions Generale
+            
             Spacer()
             
         }

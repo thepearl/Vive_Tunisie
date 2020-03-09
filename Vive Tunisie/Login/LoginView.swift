@@ -21,7 +21,7 @@ struct LoginView: View {
         Spacer()
             Image("LoginIllust")
             .resizable()
-            .frame(width: 220, height: 200)
+            .frame(width: 200, height: 180)
                 .padding(.all, 10)
         VStack(spacing: 15){
         Picker(selection: $selected, label: Text("")){
