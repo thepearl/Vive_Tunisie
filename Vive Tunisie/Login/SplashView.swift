@@ -16,14 +16,14 @@ struct SplashView: View {
 
     var body: some View {
         NavigationView{
-        VStack(spacing: 25){
-            Image("Logo")
-                .resizable()
-                .scaleEffect(half ? 0.5 : 1.0)
-                .opacity(dim ? 0.2 : 1.0)
-                .frame(width: 110, height: 170)
-                .animation(.easeInOut(duration: 1.0))
-                .onAppear() {
+            VStack(alignment: .center, spacing: 25){
+                Image("Logo")
+                    .resizable()
+                    .scaleEffect(half ? 0.5 : 1.0)
+                    .opacity(dim ? 0.2 : 1.0)
+                    .frame(width: 110, height: 170)
+                    .animation(.easeInOut(duration: 1.0))
+                    .onAppear() {
                     self.dim.toggle()
                     self.half.toggle()
                     }
@@ -38,7 +38,6 @@ struct SplashView: View {
             })
                        }
                    }
-
 
 func gotoLoginScreen(time: Double) {
     DispatchQueue.main.asyncAfter(deadline: .now() + Double(time)) {

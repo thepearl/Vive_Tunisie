@@ -7,14 +7,20 @@
 //
 
 import SwiftUI
+import FBSDKLoginKit
+import Firebase
+import GoogleSignIn
 
 struct LoginCard: View {
     @State private var email = ""
     @State private var pass = ""
 
 
+
+
+
     var body: some View {
-        VStack(spacing: 15){
+        VStack(spacing: 10){
             HStack{
             Image("Email")
                 .resizable()
@@ -77,44 +83,16 @@ struct LoginCard: View {
                 Image("Line")
             } // Divider "Ou"
             
-            HStack(spacing:20){
-                Button(action: {
-                 //TODO
-                }){
-                    HStack{ Image("Google")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 25, height: 25)
-                    Text("Google")
-                    .font(.custom("Futura", size: 15))
-                    .foregroundColor(Color("Text"))
-                    }.frame(width: 130, height: 35)
-                    .padding(.all, 5)
+            
                 
-                } // Google
-                    .background(Color.white)
-                    .cornerRadius(5)
+                loginViaFacebook()
+                 .frame(width: 35, height: 40)
+                  
+              
+                loginViaGoogle()
+                    .frame(width: 35, height: 40)
+                 
                     
-                
-                Button(action: {
-                 //TODO
-                }){
-                    HStack{
-                    Image("Facebook")
-                    .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 25, height: 25)
-                    Text("Facebook")
-                        .font(.custom("Futura", size: 15))
-                        .foregroundColor(Color("Text"))
-                    }.frame(width: 130, height: 35)
-                    .padding(.all, 5)
-                
-                } // Facebook
-                    .background(Color.white)
-                    .cornerRadius(10)
-                    
-            } // Connect via ..
                 
             Spacer()
             
@@ -140,3 +118,64 @@ struct LoginCard_Previews: PreviewProvider {
         LoginCard()
     }
 }
+
+
+struct loginViaGoogle : UIViewRepresentable  {
+  
+    func makeUIView(context: UIViewRepresentableContext<loginViaGoogle>) -> GIDSignInButton {
+        let button = GIDSignInButton()
+        button.style = .wide
+        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+        return button
+    }
+    func updateUIView(_ uiView: GIDSignInButton, context: UIViewRepresentableContext<loginViaGoogle>) {
+        
+    }
+    
+}
+struct loginViaFacebook : UIViewRepresentable {
+    
+    func makeCoordinator() -> loginViaFacebook.Coordinator {
+        return loginViaFacebook.Coordinator()
+    }
+    
+    func makeUIView(context: UIViewRepresentableContext<loginViaFacebook>) -> FBLoginButton {
+        let button = FBLoginButton()
+        button.permissions = ["email"]
+        button.delegate = context.coordinator
+        return button
+        
+    }
+    func updateUIView(_ uiView: FBLoginButton, context: UIViewRepresentableContext<loginViaFacebook>) {
+        
+    }
+    
+    class Coordinator : NSObject, LoginButtonDelegate {
+        func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+            if error != nil {
+                print((error?.localizedDescription)!)
+                return
+            }
+            
+            if AccessToken.current != nil {
+                let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+                Auth.auth().signIn(with: credential){ (res, er) in
+                    
+                    if er != nil {
+                        print((er?.localizedDescription)!)
+                        return
+                    }
+                    print("Success")
+                }
+            }
+        }
+        
+        func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+            try! Auth.auth().signOut()
+        }
+        
+        
+        
+    }
+    
+} // Facebbok Login Controller
