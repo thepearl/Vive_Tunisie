@@ -12,12 +12,14 @@ import Firebase
 import GoogleSignIn
 
 struct LoginCard: View {
+
+    
     @State private var email = ""
     @State private var pass = ""
-
-
-
-
+    @State private var shown = false
+    @State private var msg = ""
+    let signout = SwiftUIView()
+    @State private var isActive = true
 
     var body: some View {
         VStack(spacing: 10){
@@ -63,7 +65,20 @@ struct LoginCard: View {
             } // Mot de passe
            
             Button(action: {
-                // TODO
+                Auth.auth().signIn(withEmail: self.email, password: self.pass){ (authResult, error) in
+                    if error != nil {
+                        print(error!)
+                    }
+                    else{
+                        print(authResult!)
+                        NavigationLink(destination: self.signout,
+                                       isActive: self.$isActive,
+                                           label: { EmptyView() })
+
+                        
+                    }
+                    
+                }
             }){
                 Text("Se Connecter")
                     .font(.custom("futura", size: 15))
@@ -73,8 +88,10 @@ struct LoginCard: View {
                     .background(Color("Button"))
                 .cornerRadius(10)
                 
-            } //Button Se Connecter
-            
+            }.alert(isPresented: $shown){
+                return Alert(title: Text(self.msg))
+            }
+             //Button Se Connecter
             HStack(spacing: 20){
                 Image("Line")
                 Text("Ou")
@@ -89,11 +106,9 @@ struct LoginCard: View {
                  .frame(width: 35, height: 40)
                   
               
-                loginViaGoogle()
-                    .frame(width: 35, height: 40)
+             //   loginViaGoogle()
+                //    .frame(width: 35, height: 40)
                  
-                    
-                
             Spacer()
             
             Button(action: {
@@ -106,33 +121,15 @@ struct LoginCard: View {
                     Image("Line")
                     .foregroundColor(Color("Blur"))
                 }.padding(.bottom, 15)
-            }   // Conditions Generale
-            
-            
+            }   // Conditions Generale   
         }
-        
-}
-}
-struct LoginCard_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginCard()
-    }
+        .frame(alignment: .topLeading)
+        .navigationBarBackButtonHidden(true)
+
 }
 
-
-struct loginViaGoogle : UIViewRepresentable  {
-  
-    func makeUIView(context: UIViewRepresentableContext<loginViaGoogle>) -> GIDSignInButton {
-        let button = GIDSignInButton()
-        button.style = .wide
-        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
-        return button
-    }
-    func updateUIView(_ uiView: GIDSignInButton, context: UIViewRepresentableContext<loginViaGoogle>) {
-        
-    }
-    
 }
+
 struct loginViaFacebook : UIViewRepresentable {
     
     func makeCoordinator() -> loginViaFacebook.Coordinator {
@@ -144,10 +141,8 @@ struct loginViaFacebook : UIViewRepresentable {
         button.permissions = ["email"]
         button.delegate = context.coordinator
         return button
-        
     }
     func updateUIView(_ uiView: FBLoginButton, context: UIViewRepresentableContext<loginViaFacebook>) {
-        
     }
     
     class Coordinator : NSObject, LoginButtonDelegate {
@@ -156,11 +151,9 @@ struct loginViaFacebook : UIViewRepresentable {
                 print((error?.localizedDescription)!)
                 return
             }
-            
             if AccessToken.current != nil {
                 let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
                 Auth.auth().signIn(with: credential){ (res, er) in
-                    
                     if er != nil {
                         print((er?.localizedDescription)!)
                         return
@@ -169,13 +162,48 @@ struct loginViaFacebook : UIViewRepresentable {
                 }
             }
         }
-        
         func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
             try! Auth.auth().signOut()
         }
+    }
+}
+
+func checkUser(completion: @escaping (Bool,String)->Void){
+     
+    let db = Firestore.firestore()
+    
+    db.collection("users").getDocuments { (snap, err) in
         
+        if err != nil{
+            
+            print((err?.localizedDescription)!)
+            return
+        }
         
+        for i in snap!.documents{
+            
+            if i.documentID == Auth.auth().currentUser?.uid{
+                
+                completion(true,i.get("name") as! String)
+                return
+            }
+        }
         
+        completion(false,"")
     }
     
-} // Facebbok Login Controller
+}
+
+
+
+
+
+
+
+struct LoginCard_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginCard()
+    }
+}
+
+

@@ -17,6 +17,9 @@
 		7A43523224113DB5003377F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A43523024113DB5003377F1 /* LaunchScreen.storyboard */; };
 		7A43523A24113DD9003377F1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43523924113DD9003377F1 /* LoginView.swift */; };
 		7A43523D24113E01003377F1 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43523C24113E01003377F1 /* SplashView.swift */; };
+		7A62A6E3241A3F1900D7C41D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A6E2241A3F1900D7C41D /* User.swift */; };
+		7A99D747241A3AC700E32E85 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A99D746241A3AC700E32E85 /* VerificationView.swift */; };
+		7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */; };
 		7AE30D1F2418180A00C89F0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */; };
 		7AED4DE9241147E200A8C052 /* HelveticaNeueBlackItalic 1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4DD9241147E100A8C052 /* HelveticaNeueBlackItalic 1.otf */; };
 		7AED4DEA241147E200A8C052 /* Helvetica26UltraLightItalic_22434.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4DDA241147E100A8C052 /* Helvetica26UltraLightItalic_22434.ttf */; };
@@ -71,6 +74,9 @@
 		7A43523324113DB5003377F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A43523924113DD9003377F1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7A43523C24113E01003377F1 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		7A62A6E2241A3F1900D7C41D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7A99D746241A3AC700E32E85 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7AED4DD9241147E100A8C052 /* HelveticaNeueBlackItalic 1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueBlackItalic 1.otf"; sourceTree = "<group>"; };
 		7AED4DDA241147E100A8C052 /* Helvetica26UltraLightItalic_22434.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Helvetica26UltraLightItalic_22434.ttf; sourceTree = "<group>"; };
@@ -143,6 +149,8 @@
 		7A43522424113DB4003377F1 /* Vive Tunisie */ = {
 			isa = PBXGroup;
 			children = (
+				7A62A6E6241A73DB00D7C41D /* Controllers */,
+				7A62A6E1241A3EFE00D7C41D /* Models */,
 				7A43523B24113DE4003377F1 /* Login */,
 				7A43522524113DB4003377F1 /* AppDelegate.swift */,
 				7A43522724113DB4003377F1 /* SceneDelegate.swift */,
@@ -172,8 +180,25 @@
 				7A43523C24113E01003377F1 /* SplashView.swift */,
 				7A05344224125D1A00814342 /* LoginCard.swift */,
 				7A05344424125E3700814342 /* SignUpCard.swift */,
+				7A99D746241A3AC700E32E85 /* VerificationView.swift */,
+				7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		7A62A6E1241A3EFE00D7C41D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7A62A6E2241A3F1900D7C41D /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7A62A6E6241A73DB00D7C41D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		7AED4DB0241147A200A8C052 /* Fonts */ = {
@@ -424,9 +449,12 @@
 				7A05344324125D1A00814342 /* LoginCard.swift in Sources */,
 				7A43522824113DB4003377F1 /* SceneDelegate.swift in Sources */,
 				7A43523D24113E01003377F1 /* SplashView.swift in Sources */,
+				7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */,
 				7A43523A24113DD9003377F1 /* LoginView.swift in Sources */,
+				7A62A6E3241A3F1900D7C41D /* User.swift in Sources */,
 				7A43522A24113DB4003377F1 /* ContentView.swift in Sources */,
 				7A05344524125E3700814342 /* SignUpCard.swift in Sources */,
+				7A99D747241A3AC700E32E85 /* VerificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

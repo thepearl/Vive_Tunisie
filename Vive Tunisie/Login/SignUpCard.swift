@@ -7,158 +7,163 @@
 //
 
 import SwiftUI
+import Firebase
+
 struct SignUpCard: View {
     @State private var email = ""
     @State private var pass = ""
-    @State private var noms = ""
+    @State private var name = ""
     @State private var gov = ""
 
     var body: some View {
-      
-         VStack(spacing: 10){
-             HStack{
-             Image("Person")
-                 .resizable()
-                 .frame(width: 20, height: 20)
-                 .padding(.horizontal, 20)
-                 
-             TextField("Nom et Prenom", text: $noms)
-                 .foregroundColor(Color("Text"))
-                 .keyboardType(.emailAddress)
 
-                 } // Nom et prenom
-                 .frame(width: 350, height: 50)
-                 .background(Color.white)
-                 .cornerRadius(15)
-            
-            HStack{
-             Image("Email")
-                 .resizable()
-                 .frame(width: 20, height: 20)
-                 .padding(.horizontal, 20)
-                 
-             TextField("Courrier électronique", text: $email)
-                 .foregroundColor(Color("Text"))
-                 .keyboardType(.emailAddress)
+             VStack(spacing: 15){
+                 HStack{
+                 Image("Person")
+                     .resizable()
+                     .frame(width: 20, height: 20)
+                     .padding(.horizontal, 20)
+                     
+                 TextField("Nom et Prenom", text: $name)
+                     .foregroundColor(Color("Text"))
+                     .keyboardType(.emailAddress)
 
-                 } // Email
-                 .frame(width: 350, height: 50)
-                 .background(Color.white)
-                 .cornerRadius(15)
-             
-            HStack{
-                    Image("Pass")
-                            .resizable()
-                            .frame(width: 20, height: 20)
-                            .padding(.horizontal, 20)
+                     } // Nom et prenom
+                     .frame(width: 350, height: 50)
+                     .background(Color.white)
+                     .cornerRadius(15)
                 
-                    SecureField("Mot de passe", text: $pass)
-                            .foregroundColor(Color("Text"))
-                    } // SecureField : Mot de passe
-                                .frame(width: 350, height: 50)
-                                .background(Color.white)
-                                .cornerRadius(15)
-           
+                HStack{
+                 Image("Email")
+                     .resizable()
+                     .frame(width: 20, height: 20)
+                     .padding(.horizontal, 20)
+                     
+                 TextField("Courrier électronique", text: $email)
+                     .foregroundColor(Color("Text"))
+                     .keyboardType(.emailAddress)
+
+                     } // Email
+                     .frame(width: 350, height: 50)
+                     .background(Color.white)
+                     .cornerRadius(15)
+                 
+                HStack{
+                        Image("Pass")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+                                .padding(.horizontal, 20)
+                    
+                        SecureField("Mot de passe", text: $pass)
+                                .foregroundColor(Color("Text"))
+                        } // SecureField : Mot de passe
+                                    .frame(width: 350, height: 50)
+                                    .background(Color.white)
+                                    .cornerRadius(15)
             HStack{
             Image("Gov")
                 .resizable()
-                .frame(width: 15, height: 20)
+                .frame(width: 20, height: 20)
                 .padding(.horizontal, 20)
                 
-            TextField("Gouvernorat", text: $noms)
+            TextField("Governaurat", text: $gov)
                 .foregroundColor(Color("Text"))
                 .keyboardType(.emailAddress)
 
-                } // Gov
+                } // GOV
+                .frame(width: 350, height: 50)
+                .background(Color.white)
+                .cornerRadius(15)
+              
+         
                 .frame(width: 350, height: 50)
                 .background(Color.white)
                 .cornerRadius(15)
                 
-            
-            VStack{
-            Spacer()
-             Button(action: {
-                 // TODO
-             }){
-                 Text("S'inscrire")
-                     .font(.custom("futura", size: 15))
-                     .foregroundColor(.white)
-                     .padding(.horizontal, 80)
-                     .frame(width: 300, height: 50)
-                     .background(Color("Button"))
-                 .cornerRadius(10)
-                 
-             } //Button S'inscrire
-                Spacer()
-
-             HStack(spacing: 20){
-                 Image("Line")
-                 Text("Ou")
-                     .font(.custom("futura", size: 14))
-                     .foregroundColor(Color("Blur"))
-                 Image("Line")
-             } // Divider "Ou"
-                Spacer()
-             
-             HStack(spacing:20){
+                VStack(){
                  Button(action: {
-                  //TODO
+                  
+                    self.CreateUser(name: self.name,pass : self.pass,email: self.email,gov : self.gov) { (status) in
+                                               
+                                               if status{
+                                                   
+                                                   print("done")
+                                               }
+                                               else{
+                                                print("Fuck")
+                                                    }
+                    }
+                 
                  }){
-                     HStack{ Image("Google")
-                         .resizable()
-                         .aspectRatio(contentMode: .fill)
-                         .frame(width: 25, height: 25)
-                     Text("Google")
-                     .font(.custom("Futura", size: 15))
-                     .foregroundColor(Color("Text"))
-                     }.frame(width: 130, height: 35)
-                     .padding(.all, 5)
-                 
-                 } // Google
-                     .background(Color.white)
-                     .cornerRadius(5)
-                     
-                 
-                 Button(action: {
-                  //TODO
-                 }){
-                     HStack{
-                     Image("Facebook")
-                     .resizable()
-                         .aspectRatio(contentMode: .fill)
-                         .frame(width: 25, height: 25)
-                     Text("Facebook")
-                         .font(.custom("Futura", size: 15))
-                         .foregroundColor(Color("Text"))
-                     }.frame(width: 130, height: 35)
-                     .padding(.all, 5)
-                 
-                 } // Facebook
-                     .background(Color.white)
+                     Text("S'inscrire")
+                         .font(.custom("futura", size: 15))
+                         .foregroundColor(.white)
+                         .padding(.horizontal, 80)
+                         .frame(width: 300, height: 50)
+                         .background(Color("Button"))
                      .cornerRadius(10)
                      
-             } // Connect via ..
-             Spacer()
-             
-             Button(action: {
-                 //TODO
-             }){
-                 VStack(spacing: 0){
-                 Text("Conditions Générales d’Utilisation")
-                     .foregroundColor(Color("Blur"))
-                     .font(.custom("futura", size: 12))
-                     Image("Line")
-                     .foregroundColor(Color("Blur"))
-                 }
-             }   // Conditions Generale
-                Spacer()
-            }
-         }
-        }
+                 } //Button S'inscrire
 
-}
+                        Spacer()
+                    
+                 Button(action: {
+                     //TODO
+                 }){
+                     VStack(spacing: 0){
+                     Text("Conditions Générales d’Utilisation")
+                         .foregroundColor(Color("Blur"))
+                         .font(.custom("futura", size: 12))
+                         Image("Line")
+                         .foregroundColor(Color("Blur"))
+                     }
+                 }   // Conditions Generale
+
+                        }
+                    }
+                
+        }
+    
+
+func CreateUser(name: String,pass : String,email: String,gov : String,completion : @escaping (Bool)-> Void){
+    
+    let db = Firestore.firestore()
+    
+    Auth.auth().createUser(withEmail: email, password: pass){ authResult, error in
+        if(error != nil){
+            let uid = Auth.auth().currentUser?.uid
+        db.collection("users").document(uid!).setData(["name":name,"pass":pass,"email":email,"uid":uid!]) { (err) in
+                               
+                               if err != nil{
+                                   
+                                   print((err?.localizedDescription)!)
+                                   return
+                               }
+                               
+                               completion(true)
+                               
+                               UserDefaults.standard.set(true, forKey: "status")
+                               
+                               UserDefaults.standard.set(name, forKey: "UserName")
+                               
+                               NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
+                           }
+            
+        }
+ 
+    }
+        }
+    }
+
+
+
 struct SignUpCard_Previews: PreviewProvider {
     static var previews: some View {
         SignUpCard()
     }
 }
+
+
+
+
+

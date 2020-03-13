@@ -37,6 +37,7 @@ struct SplashView: View {
                 self.gotoLoginScreen(time: 2.5)
             })
                        }
+        
                    }
 
 func gotoLoginScreen(time: Double) {
