@@ -14,6 +14,8 @@ struct SignUpCard: View {
     @State private var pass = ""
     @State private var name = ""
     @State private var gov = ""
+    @State private var isActive = false
+    @State private var showingAlert = false
 
     var body: some View {
 
@@ -75,40 +77,45 @@ struct SignUpCard: View {
                 .background(Color.white)
                 .cornerRadius(15)
               
-         
-                .frame(width: 350, height: 50)
-                .background(Color.white)
-                .cornerRadius(15)
-                
                 VStack(){
-                 Button(action: {
-                  
-                    self.CreateUser(name: self.name,pass : self.pass,email: self.email,gov : self.gov) { (status) in
-                                               
-                                               if status{
-                                                   
-                                                   print("done")
-                                               }
-                                               else{
-                                                print("Fuck")
-                                                    }
+                    NavigationLink(destination: VerificationView(), isActive: self.$isActive){
+                        Button(action: {
+                            if(self.name != "" && self.pass != "" && self.email != "" && self.gov != ""  ){
+                           self.CreateUser(name: self.name,pass : self.pass,email: self.email,gov : self.gov) { (status) in
+                                                      
+                                   if status{
+                                       print("done")
+                                    self.isActive.toggle()
+                                                   }
+                                                      else{
+                                                       print("error")
+                                                           }
+                           }
+                        
+                            }
+                            else{
+                                print("Fill all Columns error")
+                                self.showingAlert = true
+                            }
+                        }){
+                            Text("S'inscrire")
+                                .font(.custom("futura", size: 15))
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 80)
+                                .frame(width: 300, height: 50)
+                                .background(Color("Button"))
+                                .cornerRadius(10)
+                            
+                        }//Button S'inscrire
+                            .alert(isPresented: $showingAlert){
+                               Alert(title: Text("Alerte"), message: Text("Veuillez completer tous les coordonnées"), dismissButton: .default(Text("Revenir")))
+                        }
                     }
-                 
-                 }){
-                     Text("S'inscrire")
-                         .font(.custom("futura", size: 15))
-                         .foregroundColor(.white)
-                         .padding(.horizontal, 80)
-                         .frame(width: 300, height: 50)
-                         .background(Color("Button"))
-                     .cornerRadius(10)
-                     
-                 } //Button S'inscrire
 
                         Spacer()
                     
                  Button(action: {
-                     //TODO
+                    //TODO
                  }){
                      VStack(spacing: 0){
                      Text("Conditions Générales d’Utilisation")
@@ -118,7 +125,7 @@ struct SignUpCard: View {
                          .foregroundColor(Color("Blur"))
                      }
                  }   // Conditions Generale
-
+                    Spacer()
                         }
                     }
                 
@@ -147,13 +154,11 @@ func CreateUser(name: String,pass : String,email: String,gov : String,completion
                                UserDefaults.standard.set(name, forKey: "UserName")
                                
                                NotificationCenter.default.post(name: NSNotification.Name("statusChange"), object: nil)
-                           }
-            
+                        }
+                    }
+                }
+            }
         }
- 
-    }
-        }
-    }
 
 
 

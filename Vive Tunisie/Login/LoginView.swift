@@ -18,7 +18,6 @@ struct LoginView: View {
             .edgesIgnoringSafeArea(.all)
             Spacer()
     VStack(){
-        Spacer()
             Image("LoginIllust")
             .resizable()
             .frame(width: 200, height: 150)
@@ -29,6 +28,7 @@ struct LoginView: View {
             Text("Inscrivez vous").tag(1)
             
             Text("Connectez Vous").tag(0)
+            
         }.pickerStyle(SegmentedPickerStyle())
             
             if(self.selected == 0){
@@ -40,6 +40,7 @@ struct LoginView: View {
         }.background(Color("secBackground"))
         .cornerRadius(20)
         }
+            Spacer()
         
             }
         .offset(y: -self.value)

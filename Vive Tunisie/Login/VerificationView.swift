@@ -2,7 +2,7 @@ import SwiftUI
 import Firebase
   
   struct VerificationView: View {
-      
+      @State var value :CGFloat = 0
       @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
       
       var body: some View {
@@ -11,7 +11,7 @@ import Firebase
               
               if status{
                   
-                  
+                  FirstPage()
               }
               else{
                   
@@ -21,8 +21,21 @@ import Firebase
                   }
               }
               
-          }.onAppear {
-              
+          }
+            
+          .offset(y: -self.value)
+        .animation(.spring())
+          .onAppear {
+              NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main){ (noti) in
+                      let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                      let height = value.height
+                      self.value = height
+                  }
+                  NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main){ (n) in
+                                 
+                                 self.value = 0
+              }// Keyboard Listener
+            
               NotificationCenter.default.addObserver(forName: NSNotification.Name("statusChange"), object: nil, queue: .main) { (_) in
                   
                  let status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
@@ -48,10 +61,10 @@ import Firebase
       var body : some View{
           
           VStack(spacing: 20){
+            Spacer()
               
-              Image("pic")
-              
-              Text("Verifier votre compte").font(.largeTitle).fontWeight(.heavy)
+              Image("LoginIllust")
+            
               
               Text("Entrer votre numero de Tel pour verifier votre compte:")
                   .font(.body)
@@ -97,7 +110,7 @@ import Firebase
                       
                   }) {
                       
-                      Text("Se Connecter")
+                      Text("Envoyer le code")
                           .font(.custom("futura", size: 15))
                           .foregroundColor(.white)
                           .padding(.horizontal, 80)
@@ -106,8 +119,7 @@ import Firebase
                         .cornerRadius(10)
               }
   
-              .navigationBarTitle("")
-              .navigationBarHidden(true)
+              .navigationBarTitle("Verifier votre Compte")
               .navigationBarBackButtonHidden(true)
               
           }.padding()
@@ -133,12 +145,11 @@ import Firebase
               GeometryReader{_ in
                   
                   VStack(spacing: 20){
+                    Spacer()
                       
-                      Image("pic")
+                      Image("LoginIllust")
                       
-                      Text("Verification Code").font(.largeTitle).fontWeight(.heavy)
-                      
-                      Text("Please Enter The Verification Code")
+                      Text("Veuillez entrer le code recu")
                           .font(.body)
                           .foregroundColor(.gray)
                           .padding(.top, 12)
@@ -171,15 +182,15 @@ import Firebase
                           
                       }) {
                           
-                          Text("Verify").frame(width: UIScreen.main.bounds.width - 30,height: 50)
-                          
-                      }.foregroundColor(.white)
-                      .background(Color.orange)
-                      .cornerRadius(10)
-                      .navigationBarTitle("")
-                      .navigationBarHidden(true)
-                      .navigationBarBackButtonHidden(true)
-                      
+                          Text("Verifier").frame(width: UIScreen.main.bounds.width - 30,height: 50)
+                                                 .font(.custom("futura", size: 15))
+                                                 .foregroundColor(.white)
+                                                 .padding(.horizontal, 80)
+                                                 .frame(width: 300, height: 50)
+                                                 .background(Color("Button"))
+                                                 .cornerRadius(10)
+                      }
+                        .navigationBarHidden(true)
                   }
                   
               }
@@ -195,9 +206,9 @@ import Firebase
               }.foregroundColor(.orange)
               
           }
+          
           .padding()
           .alert(isPresented: $alert) {
-                  
               Alert(title: Text("Error"), message: Text(self.msg), dismissButton: .default(Text("Ok")))
           }
       }

@@ -21,6 +21,7 @@
 		7A99D747241A3AC700E32E85 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A99D746241A3AC700E32E85 /* VerificationView.swift */; };
 		7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */; };
 		7AE30D1F2418180A00C89F0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */; };
+		7AED30982426678600F56FF9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AED30972426678600F56FF9 /* DashboardView.swift */; };
 		7AED4DE9241147E200A8C052 /* HelveticaNeueBlackItalic 1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4DD9241147E100A8C052 /* HelveticaNeueBlackItalic 1.otf */; };
 		7AED4DEA241147E200A8C052 /* Helvetica26UltraLightItalic_22434.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4DDA241147E100A8C052 /* Helvetica26UltraLightItalic_22434.ttf */; };
 		7AED4DEB241147E200A8C052 /* Helvetica36ThinItalic_22436.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4DDB241147E100A8C052 /* Helvetica36ThinItalic_22436.ttf */; };
@@ -78,6 +79,7 @@
 		7A99D746241A3AC700E32E85 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7AED30972426678600F56FF9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		7AED4DD9241147E100A8C052 /* HelveticaNeueBlackItalic 1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueBlackItalic 1.otf"; sourceTree = "<group>"; };
 		7AED4DDA241147E100A8C052 /* Helvetica26UltraLightItalic_22434.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Helvetica26UltraLightItalic_22434.ttf; sourceTree = "<group>"; };
 		7AED4DDB241147E100A8C052 /* Helvetica36ThinItalic_22436.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Helvetica36ThinItalic_22436.ttf; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		7A43522424113DB4003377F1 /* Vive Tunisie */ = {
 			isa = PBXGroup;
 			children = (
+				7AED30942426674700F56FF9 /* Dashboard */,
 				7A62A6E6241A73DB00D7C41D /* Controllers */,
 				7A62A6E1241A3EFE00D7C41D /* Models */,
 				7A43523B24113DE4003377F1 /* Login */,
@@ -199,6 +202,14 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7AED30942426674700F56FF9 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				7AED30972426678600F56FF9 /* DashboardView.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 		7AED4DB0241147A200A8C052 /* Fonts */ = {
@@ -451,6 +462,7 @@
 				7A43523D24113E01003377F1 /* SplashView.swift in Sources */,
 				7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */,
 				7A43523A24113DD9003377F1 /* LoginView.swift in Sources */,
+				7AED30982426678600F56FF9 /* DashboardView.swift in Sources */,
 				7A62A6E3241A3F1900D7C41D /* User.swift in Sources */,
 				7A43522A24113DB4003377F1 /* ContentView.swift in Sources */,
 				7A05344524125E3700814342 /* SignUpCard.swift in Sources */,

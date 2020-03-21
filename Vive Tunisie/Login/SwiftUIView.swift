@@ -17,8 +17,6 @@ struct SwiftUIView: View {
                  let firebaseAuth = Auth.auth()
                 do {
                   try firebaseAuth.signOut()
-                    NavigationLink(destination: self.login,
-                    label: { EmptyView() })
                 } catch let signOutError as NSError {
                   print ("Error signing out: %@", signOutError)
                 }

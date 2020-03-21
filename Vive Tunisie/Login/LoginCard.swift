@@ -16,10 +16,9 @@ struct LoginCard: View {
     
     @State private var email = ""
     @State private var pass = ""
-    @State private var shown = false
     @State private var msg = ""
-    let signout = SwiftUIView()
-    @State private var isActive = true
+    @State private var isActive = false
+    @State private var showingAlert = false
 
     var body: some View {
         VStack(spacing: 10){
@@ -64,34 +63,33 @@ struct LoginCard: View {
                 
             } // Mot de passe
            
-            Button(action: {
-                Auth.auth().signIn(withEmail: self.email, password: self.pass){ (authResult, error) in
-                    if error != nil {
-                        print(error!)
-                    }
-                    else{
-                        print(authResult!)
-                        NavigationLink(destination: self.signout,
-                                       isActive: self.$isActive,
-                                           label: { EmptyView() })
+           NavigationLink(destination: DashboardView(), isActive: self.$isActive){
+                          Button(action: {
+                              Auth.auth().signIn(withEmail: self.email, password: self.pass){ (authResult, error) in
+                                  if error != nil {
+                                      print(error!)
+                                      self.showingAlert = true
+                                  }
+                                  else{
+                                      print(authResult!)
+                                      self.isActive = true
+                                  }
+                                  
+                              }
+                          }){
+                              Text("Se Connecter")
+                                  .font(.custom("futura", size: 15))
+                                  .foregroundColor(.white)
+                                  .padding(.horizontal, 80)
+                                  .frame(width: 300, height: 50)
+                                  .background(Color("Button"))
+                              .cornerRadius(10)
+                              
+                          }.alert(isPresented: self.$showingAlert){
+                            Alert(title: Text("Alerte"), message: Text("Veuillez Verifier vos coordonnées"), dismissButton: .default(Text("Revenir")))
+                          }             //Button Se Connecter
+                      }
 
-                        
-                    }
-                    
-                }
-            }){
-                Text("Se Connecter")
-                    .font(.custom("futura", size: 15))
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 80)
-                    .frame(width: 300, height: 50)
-                    .background(Color("Button"))
-                .cornerRadius(10)
-                
-            }.alert(isPresented: $shown){
-                return Alert(title: Text(self.msg))
-            }
-             //Button Se Connecter
             HStack(spacing: 20){
                 Image("Line")
                 Text("Ou")
@@ -99,9 +97,7 @@ struct LoginCard: View {
                     .foregroundColor(Color("Blur"))
                 Image("Line")
             } // Divider "Ou"
-            
-            
-                
+
                 loginViaFacebook()
                  .frame(width: 35, height: 40)
                   
