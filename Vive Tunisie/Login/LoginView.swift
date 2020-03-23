@@ -15,7 +15,7 @@ struct LoginView: View {
         ZStack(){
             Rectangle()
                 .foregroundColor(Color("Background"))
-            .edgesIgnoringSafeArea(.all)
+                .edgesIgnoringSafeArea(.all)
             Spacer()
     VStack(){
             Image("LoginIllust")

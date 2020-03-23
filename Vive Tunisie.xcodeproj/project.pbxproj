@@ -57,6 +57,8 @@
 		7AED4E1C241147EC00A8C052 /* futura.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4E09241147EC00A8C052 /* futura.ttf */; };
 		7AED4E1D241147EC00A8C052 /* Futura Book font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4E0A241147EC00A8C052 /* Futura Book font.ttf */; };
 		7AED4E1E241147EC00A8C052 /* Futura Bold font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4E0B241147EC00A8C052 /* Futura Bold font.ttf */; };
+		7AF036BD24291B390026F885 /* TasksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF036BC24291B390026F885 /* TasksCollectionView.swift */; };
+		7AF036BF24292E740026F885 /* TopDashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF036BE24292E740026F885 /* TopDashView.swift */; };
 		9DFFFC27FAA3D5513EB6C3A9 /* Pods_Vive_Tunisie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC7D639124E4B922B451D0B /* Pods_Vive_Tunisie.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		7AED4E09241147EC00A8C052 /* futura.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futura.ttf; sourceTree = "<group>"; };
 		7AED4E0A241147EC00A8C052 /* Futura Book font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Book font.ttf"; sourceTree = "<group>"; };
 		7AED4E0B241147EC00A8C052 /* Futura Bold font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Bold font.ttf"; sourceTree = "<group>"; };
+		7AF036BC24291B390026F885 /* TasksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionView.swift; sourceTree = "<group>"; };
+		7AF036BE24292E740026F885 /* TopDashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDashView.swift; sourceTree = "<group>"; };
 		98C8063E6EC880B8DA6247C9 /* Pods-Vive Tunisie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vive Tunisie.release.xcconfig"; path = "Target Support Files/Pods-Vive Tunisie/Pods-Vive Tunisie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				7AED30972426678600F56FF9 /* DashboardView.swift */,
+				7AF036BC24291B390026F885 /* TasksCollectionView.swift */,
+				7AF036BE24292E740026F885 /* TopDashView.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -458,7 +464,9 @@
 			files = (
 				7A43522624113DB4003377F1 /* AppDelegate.swift in Sources */,
 				7A05344324125D1A00814342 /* LoginCard.swift in Sources */,
+				7AF036BF24292E740026F885 /* TopDashView.swift in Sources */,
 				7A43522824113DB4003377F1 /* SceneDelegate.swift in Sources */,
+				7AF036BD24291B390026F885 /* TasksCollectionView.swift in Sources */,
 				7A43523D24113E01003377F1 /* SplashView.swift in Sources */,
 				7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */,
 				7A43523A24113DD9003377F1 /* LoginView.swift in Sources */,

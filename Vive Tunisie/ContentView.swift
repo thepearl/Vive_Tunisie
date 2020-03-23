@@ -10,12 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        SplashView()
+        TasksCollectionView()
 }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group{
+            ContentView().colorScheme(.light)
+            ContentView().colorScheme(.dark)
+        }
+        
     }
 }

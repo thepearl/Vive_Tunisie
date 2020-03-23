@@ -29,7 +29,7 @@ struct LoginCard: View {
                 .padding(.horizontal, 20)
                 
             TextField("Courrier électronique", text: $email)
-                .foregroundColor(Color("Text"))
+                .foregroundColor(Color(.systemGray3))
                 .keyboardType(.emailAddress)
 
                 } // Email
@@ -45,7 +45,7 @@ struct LoginCard: View {
                 .padding(.horizontal, 20)
                 
                 SecureField("Mot de passe", text: $pass)
-                    .foregroundColor(Color("Text"))
+                    .foregroundColor(Color(.systemGray3))
                 } // SecureField
                 .frame(width: 350, height: 50)
                 .background(Color.white)
