@@ -9,33 +9,25 @@
 import SwiftUI
 
 struct TasksCollectionView: View {
+    @ObservedObject private var datas = firebaseData
     var body: some View {
         VStack(spacing:20)
             {
                 HStack(spacing: 17.5){
-            makeTaskView(imageName: "house", description: "Accueil")
-            makeTaskView(imageName: "text.badge.checkmark", description: "Mes\nSignalements")
-            makeTaskView(imageName: "bookmark", description: "Favoris")
+                    makeTaskView(imageName: "house", description: "Accueil")
+                    makeTaskView(imageName: "text.badge.checkmark", description: "Mes\nSignalements")
+                    makeTaskView(imageName: "bookmark", description: "Favoris")
 
             }
                 HStack(spacing: 17.5){
-            makeTaskView(imageName: "skew", description: "Statistiques")
-            makeTaskView(imageName: "gear", description: "Paramétres")
-            makeTaskView(imageName: "exclamationmark.circle", description: "Support")
+                    makeTaskView(imageName: "skew", description: "Statistiques")
+                    makeTaskView(imageName: "gear", description: "Paramétres")
+                    makeTaskView(imageName: "exclamationmark.circle", description: "Support")
             }
-        }
-    }}
-    
-
-
-struct TasksCollectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-        TasksCollectionView().colorScheme(.light)
-            TasksCollectionView().colorScheme(.dark)
         }
     }
 }
+    
 
 
 func makeTaskView(imageName:String, description:String) -> some View{
@@ -58,3 +50,14 @@ func makeTaskView(imageName:String, description:String) -> some View{
             .shadow(radius: 1, x: 0, y: 1)
             )
     }
+
+
+
+struct TasksCollectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group{
+        TasksCollectionView().colorScheme(.light)
+            TasksCollectionView().colorScheme(.dark)
+        }
+    }
+}

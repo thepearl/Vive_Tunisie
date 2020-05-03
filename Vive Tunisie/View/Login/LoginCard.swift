@@ -19,6 +19,7 @@ struct LoginCard: View {
     @State private var msg = ""
     @State private var isActive = false
     @State private var showingAlert = false
+    @State var isLoading = false
 
     var body: some View {
         VStack(spacing: 10){
@@ -29,7 +30,7 @@ struct LoginCard: View {
                 .padding(.horizontal, 20)
                 
             TextField("Courrier électronique", text: $email)
-                .foregroundColor(Color(.systemGray3))
+                .foregroundColor(Color(.black))
                 .keyboardType(.emailAddress)
 
                 } // Email
@@ -45,7 +46,7 @@ struct LoginCard: View {
                 .padding(.horizontal, 20)
                 
                 SecureField("Mot de passe", text: $pass)
-                    .foregroundColor(Color(.systemGray3))
+                    .foregroundColor(Color(.black))
                 } // SecureField
                 .frame(width: 350, height: 50)
                 .background(Color.white)
@@ -60,22 +61,34 @@ struct LoginCard: View {
                                 .font(.custom("futura", size: 15))
                     } // Mot de passe oublie
               
+                //Loading View
+                
+                if isLoading{
+                    
+                               LoadingView()
+                           }
                 
             } // Mot de passe
            
            NavigationLink(destination: DashboardView(), isActive: self.$isActive){
                           Button(action: {
+                            self.isLoading = true
                               Auth.auth().signIn(withEmail: self.email, password: self.pass){ (authResult, error) in
                                   if error != nil {
+                                    
                                       print(error!)
-                                      self.showingAlert = true
+                                        self.showingAlert = true
+                                       self.isLoading = false
                                   }
+                                    
                                   else{
                                       print(authResult!)
                                       self.isActive = true
-                                  }
-                                  
+                                   // self.isLoading = false
+                                                                      }
                               }
+                            
+                            
                           }){
                               Text("Se Connecter")
                                   .font(.custom("futura", size: 15))
@@ -83,13 +96,14 @@ struct LoginCard: View {
                                   .padding(.horizontal, 80)
                                   .frame(width: 300, height: 50)
                                   .background(Color("Button"))
-                              .cornerRadius(10)
+                                .cornerRadius(10)
                               
                           }.alert(isPresented: self.$showingAlert){
                             Alert(title: Text("Alerte"), message: Text("Veuillez Verifier vos coordonnées"), dismissButton: .default(Text("Revenir")))
-                          }             //Button Se Connecter
-                      }
-
+                          }
+            //Button Se Connecter
+        }
+            
             HStack(spacing: 20){
                 Image("Line")
                 Text("Ou")

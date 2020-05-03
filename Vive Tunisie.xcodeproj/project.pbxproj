@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7A05344324125D1A00814342 /* LoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A05344224125D1A00814342 /* LoginCard.swift */; };
 		7A05344524125E3700814342 /* SignUpCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A05344424125E3700814342 /* SignUpCard.swift */; };
+		7A32C5E22441FE82008F7615 /* Tabitem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C5E12441FE82008F7615 /* Tabitem.swift */; };
 		7A43522624113DB4003377F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43522524113DB4003377F1 /* AppDelegate.swift */; };
 		7A43522824113DB4003377F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43522724113DB4003377F1 /* SceneDelegate.swift */; };
 		7A43522A24113DB4003377F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43522924113DB4003377F1 /* ContentView.swift */; };
@@ -17,9 +18,16 @@
 		7A43523224113DB5003377F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A43523024113DB5003377F1 /* LaunchScreen.storyboard */; };
 		7A43523A24113DD9003377F1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43523924113DD9003377F1 /* LoginView.swift */; };
 		7A43523D24113E01003377F1 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43523C24113E01003377F1 /* SplashView.swift */; };
+		7A47C1B1242CFE6C0048A0EA /* UserCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47C1B0242CFE6C0048A0EA /* UserCRUD.swift */; };
 		7A62A6E3241A3F1900D7C41D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A6E2241A3F1900D7C41D /* User.swift */; };
-		7A99D747241A3AC700E32E85 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A99D746241A3AC700E32E85 /* VerificationView.swift */; };
+		7A8B1A71243B6CA400893AE5 /* SlideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B1A70243B6CA400893AE5 /* SlideBarView.swift */; };
+		7A8C5C69245F57E8002826DD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C5C68245F57E8002826DD /* HomeView.swift */; };
 		7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */; };
+		7AC3048C243775C7001B60AB /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AC3048B243775C7001B60AB /* loading.json */; };
+		7AC3048F2437767B001B60AB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7AC3048E2437767B001B60AB /* Lottie */; };
+		7AC304912437772B001B60AB /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC304902437772B001B60AB /* LottieView.swift */; };
+		7AC304932437797C001B60AB /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC304922437797C001B60AB /* LoadingView.swift */; };
+		7AE090FE2459CC4F00BF6665 /* AccountCreatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE090FD2459CC4F00BF6665 /* AccountCreatedView.swift */; };
 		7AE30D1F2418180A00C89F0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */; };
 		7AED30982426678600F56FF9 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AED30972426678600F56FF9 /* DashboardView.swift */; };
 		7AED4DE9241147E200A8C052 /* HelveticaNeueBlackItalic 1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4DD9241147E100A8C052 /* HelveticaNeueBlackItalic 1.otf */; };
@@ -58,7 +66,6 @@
 		7AED4E1D241147EC00A8C052 /* Futura Book font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4E0A241147EC00A8C052 /* Futura Book font.ttf */; };
 		7AED4E1E241147EC00A8C052 /* Futura Bold font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4E0B241147EC00A8C052 /* Futura Bold font.ttf */; };
 		7AF036BD24291B390026F885 /* TasksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF036BC24291B390026F885 /* TasksCollectionView.swift */; };
-		7AF036BF24292E740026F885 /* TopDashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF036BE24292E740026F885 /* TopDashView.swift */; };
 		9DFFFC27FAA3D5513EB6C3A9 /* Pods_Vive_Tunisie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC7D639124E4B922B451D0B /* Pods_Vive_Tunisie.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +74,7 @@
 		6EC7D639124E4B922B451D0B /* Pods_Vive_Tunisie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vive_Tunisie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A05344224125D1A00814342 /* LoginCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCard.swift; sourceTree = "<group>"; };
 		7A05344424125E3700814342 /* SignUpCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCard.swift; sourceTree = "<group>"; };
+		7A32C5E12441FE82008F7615 /* Tabitem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabitem.swift; sourceTree = "<group>"; };
 		7A43522224113DB4003377F1 /* Vive Tunisie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vive Tunisie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A43522524113DB4003377F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A43522724113DB4003377F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,9 +85,15 @@
 		7A43523324113DB5003377F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A43523924113DD9003377F1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7A43523C24113E01003377F1 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		7A47C1B0242CFE6C0048A0EA /* UserCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCRUD.swift; sourceTree = "<group>"; };
 		7A62A6E2241A3F1900D7C41D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		7A99D746241A3AC700E32E85 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		7A8B1A70243B6CA400893AE5 /* SlideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideBarView.swift; sourceTree = "<group>"; };
+		7A8C5C68245F57E8002826DD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		7AC3048B243775C7001B60AB /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		7AC304902437772B001B60AB /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		7AC304922437797C001B60AB /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7AE090FD2459CC4F00BF6665 /* AccountCreatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreatedView.swift; sourceTree = "<group>"; };
 		7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7AED30972426678600F56FF9 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		7AED4DD9241147E100A8C052 /* HelveticaNeueBlackItalic 1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeueBlackItalic 1.otf"; sourceTree = "<group>"; };
@@ -118,7 +132,6 @@
 		7AED4E0A241147EC00A8C052 /* Futura Book font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Book font.ttf"; sourceTree = "<group>"; };
 		7AED4E0B241147EC00A8C052 /* Futura Bold font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Bold font.ttf"; sourceTree = "<group>"; };
 		7AF036BC24291B390026F885 /* TasksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionView.swift; sourceTree = "<group>"; };
-		7AF036BE24292E740026F885 /* TopDashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDashView.swift; sourceTree = "<group>"; };
 		98C8063E6EC880B8DA6247C9 /* Pods-Vive Tunisie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vive Tunisie.release.xcconfig"; path = "Target Support Files/Pods-Vive Tunisie/Pods-Vive Tunisie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DFFFC27FAA3D5513EB6C3A9 /* Pods_Vive_Tunisie.framework in Frameworks */,
+				7AC3048F2437767B001B60AB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,18 +169,13 @@
 		7A43522424113DB4003377F1 /* Vive Tunisie */ = {
 			isa = PBXGroup;
 			children = (
-				7AED30942426674700F56FF9 /* Dashboard */,
-				7A62A6E6241A73DB00D7C41D /* Controllers */,
-				7A62A6E1241A3EFE00D7C41D /* Models */,
-				7A43523B24113DE4003377F1 /* Login */,
-				7A43522524113DB4003377F1 /* AppDelegate.swift */,
-				7A43522724113DB4003377F1 /* SceneDelegate.swift */,
-				7A43522924113DB4003377F1 /* ContentView.swift */,
-				7A43522B24113DB5003377F1 /* Assets.xcassets */,
-				7A43523024113DB5003377F1 /* LaunchScreen.storyboard */,
+				7AE090FC2459C16D00BF6665 /* Resources */,
 				7A43523324113DB5003377F1 /* Info.plist */,
 				7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */,
+				7A8B1A6D243B669300893AE5 /* Animations */,
 				7AED4DB0241147A200A8C052 /* Fonts */,
+				7A62A6E1241A3EFE00D7C41D /* Models */,
+				7ADE0F9D242F69BC00E37F7E /* View */,
 				7A43522D24113DB5003377F1 /* Preview Content */,
 			);
 			path = "Vive Tunisie";
@@ -187,8 +196,10 @@
 				7A43523C24113E01003377F1 /* SplashView.swift */,
 				7A05344224125D1A00814342 /* LoginCard.swift */,
 				7A05344424125E3700814342 /* SignUpCard.swift */,
-				7A99D746241A3AC700E32E85 /* VerificationView.swift */,
 				7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */,
+				7AC304902437772B001B60AB /* LottieView.swift */,
+				7AC304922437797C001B60AB /* LoadingView.swift */,
+				7AE090FD2459CC4F00BF6665 /* AccountCreatedView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -197,15 +208,47 @@
 			isa = PBXGroup;
 			children = (
 				7A62A6E2241A3F1900D7C41D /* User.swift */,
+				7A47C1B0242CFE6C0048A0EA /* UserCRUD.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		7A62A6E6241A73DB00D7C41D /* Controllers */ = {
+		7A8B1A6D243B669300893AE5 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				7AC3048B243775C7001B60AB /* loading.json */,
 			);
-			path = Controllers;
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		7ADE0F9C242F69A900E37F7E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7A8C5C68245F57E8002826DD /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7ADE0F9D242F69BC00E37F7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7A43523024113DB5003377F1 /* LaunchScreen.storyboard */,
+				7A43523B24113DE4003377F1 /* Login */,
+				7AED30942426674700F56FF9 /* Dashboard */,
+				7ADE0F9C242F69A900E37F7E /* Home */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AE090FC2459C16D00BF6665 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A43522924113DB4003377F1 /* ContentView.swift */,
+				7A43522724113DB4003377F1 /* SceneDelegate.swift */,
+				7A43522524113DB4003377F1 /* AppDelegate.swift */,
+				7A43522B24113DB5003377F1 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7AED30942426674700F56FF9 /* Dashboard */ = {
@@ -213,7 +256,8 @@
 			children = (
 				7AED30972426678600F56FF9 /* DashboardView.swift */,
 				7AF036BC24291B390026F885 /* TasksCollectionView.swift */,
-				7AF036BE24292E740026F885 /* TopDashView.swift */,
+				7A8B1A70243B6CA400893AE5 /* SlideBarView.swift */,
+				7A32C5E12441FE82008F7615 /* Tabitem.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -312,6 +356,9 @@
 			dependencies = (
 			);
 			name = "Vive Tunisie";
+			packageProductDependencies = (
+				7AC3048E2437767B001B60AB /* Lottie */,
+			);
 			productName = "Vive Tunisie";
 			productReference = 7A43522224113DB4003377F1 /* Vive Tunisie.app */;
 			productType = "com.apple.product-type.application";
@@ -340,6 +387,9 @@
 				Base,
 			);
 			mainGroup = 7A43521924113DB4003377F1;
+			packageReferences = (
+				7AC3048D2437767B001B60AB /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 7A43522324113DB4003377F1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -388,6 +438,7 @@
 				7AED4E18241147EC00A8C052 /* futura medium condensed bt.ttf in Resources */,
 				7AED4E1E241147EC00A8C052 /* Futura Bold font.ttf in Resources */,
 				7AED4E1C241147EC00A8C052 /* futura.ttf in Resources */,
+				7AC3048C243775C7001B60AB /* loading.json in Resources */,
 				7AED4DEC241147E200A8C052 /* HelveticaNeueBold.otf in Resources */,
 				7A43522C24113DB5003377F1 /* Assets.xcassets in Resources */,
 				7AED4E1B241147EC00A8C052 /* Futura Light Italic font.ttf in Resources */,
@@ -464,17 +515,22 @@
 			files = (
 				7A43522624113DB4003377F1 /* AppDelegate.swift in Sources */,
 				7A05344324125D1A00814342 /* LoginCard.swift in Sources */,
-				7AF036BF24292E740026F885 /* TopDashView.swift in Sources */,
 				7A43522824113DB4003377F1 /* SceneDelegate.swift in Sources */,
 				7AF036BD24291B390026F885 /* TasksCollectionView.swift in Sources */,
 				7A43523D24113E01003377F1 /* SplashView.swift in Sources */,
+				7AE090FE2459CC4F00BF6665 /* AccountCreatedView.swift in Sources */,
 				7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */,
 				7A43523A24113DD9003377F1 /* LoginView.swift in Sources */,
 				7AED30982426678600F56FF9 /* DashboardView.swift in Sources */,
+				7A8C5C69245F57E8002826DD /* HomeView.swift in Sources */,
+				7AC304932437797C001B60AB /* LoadingView.swift in Sources */,
 				7A62A6E3241A3F1900D7C41D /* User.swift in Sources */,
+				7A47C1B1242CFE6C0048A0EA /* UserCRUD.swift in Sources */,
 				7A43522A24113DB4003377F1 /* ContentView.swift in Sources */,
+				7AC304912437772B001B60AB /* LottieView.swift in Sources */,
+				7A32C5E22441FE82008F7615 /* Tabitem.swift in Sources */,
 				7A05344524125E3700814342 /* SignUpCard.swift in Sources */,
-				7A99D747241A3AC700E32E85 /* VerificationView.swift in Sources */,
+				7A8B1A71243B6CA400893AE5 /* SlideBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +668,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Vive Tunisie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Vive Tunisie/Info.plist";
@@ -632,6 +689,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Vive Tunisie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Vive Tunisie/Info.plist";
@@ -668,6 +726,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7AC3048D2437767B001B60AB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7AC3048E2437767B001B60AB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7AC3048D2437767B001B60AB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A43521A24113DB4003377F1 /* Project object */;
 }

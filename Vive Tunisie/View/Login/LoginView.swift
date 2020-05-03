@@ -11,6 +11,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var selected=0
     @State var value :CGFloat = 0
+   
     var body: some View {
         ZStack(){
             Rectangle()

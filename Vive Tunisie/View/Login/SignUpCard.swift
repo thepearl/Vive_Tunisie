@@ -16,12 +16,13 @@ struct SignUpCard: View {
     @State private var gov = ""
     @State private var isActive = false
     @State private var showingAlert = false
+    @State var isLoading = false
 
     var body: some View {
 
              VStack(spacing: 15){
                  HStack{
-                 Image("Person")
+                 Image("Person1")
                      .resizable()
                      .frame(width: 20, height: 20)
                      .padding(.horizontal, 20)
@@ -78,20 +79,19 @@ struct SignUpCard: View {
                 .cornerRadius(15)
               
                 VStack(){
-                    NavigationLink(destination: VerificationView(), isActive: self.$isActive){
+                    NavigationLink(destination: AccountCreatedView(), isActive: self.$isActive){
                         Button(action: {
                             if(self.name != "" && self.pass != "" && self.email != "" && self.gov != ""  ){
                            self.CreateUser(name: self.name,pass : self.pass,email: self.email,gov : self.gov) { (status) in
                                                       
                                    if status{
                                        print("done")
-                                    self.isActive.toggle()
+                                        self.isActive.toggle()
                                                    }
                                                       else{
                                                        print("error")
                                                            }
                            }
-                        
                             }
                             else{
                                 print("Fill all Columns error")
@@ -125,7 +125,7 @@ struct SignUpCard: View {
                          .foregroundColor(Color("Blur"))
                      }
                  }   // Conditions Generale
-                    Spacer()
+             
                         }
                     }
                 
