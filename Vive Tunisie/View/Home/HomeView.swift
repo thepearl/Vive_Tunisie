@@ -11,18 +11,23 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationView{
+            
             VStack(){
+                Rectangle().frame(height: 120).foregroundColor(.white)
+                Text("Vive Tunisie")
+                    .font(.custom("Optima", size: 40))
+                    .bold()
    
                     Text("Signalement des dysfonctionnements en espaces publiques").bold()
-                        .font(.custom("Optima", size: 16))
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(2)
+                        .font(.custom("Optima", size: 20))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(3)
                         .foregroundColor(.black)
                         .padding()
-          
+
                 VStack(spacing: 10){
                     Text("Pour suivre vos signalements, vous devez :")
-                    .font(.custom("Optima", size: 15))
+                    .font(.custom("Optima", size: 20))
                                            .multilineTextAlignment(.leading)
                                            .lineLimit(2)
                                            .foregroundColor(.black)
@@ -30,7 +35,7 @@ struct HomeView: View {
                         Text("Vous identifier").bold()
                             .font(.custom("Optima", size: 15))
                             .foregroundColor(.white)
-                            .frame(width: 200, height: 30)
+                            .frame(width: 200, height: 40)
                             .background(Color(red: 224/255, green: 144/255, blue: 144/255))
                             .cornerRadius(10)
                     }.padding(.bottom, 10)
@@ -48,7 +53,7 @@ struct HomeView: View {
                                 .font(.custom("Futura", size: 18))
                                 .foregroundColor(.black)
                             
-                            }.frame(width: 300, height: 50)
+                            }.frame(width: 300, height: 60)
                             .background(Color.white)
                         .cornerRadius(10)
                         .shadow(radius: 2, x: 1, y: 2)
@@ -66,7 +71,7 @@ struct HomeView: View {
                             .font(.custom("Futura", size: 18))
                             .foregroundColor(.black)
                         
-                        }.frame(width: 300, height: 50)
+                        }.frame(width: 300, height: 60)
                         .background(Color.white)
                     .cornerRadius(10)
                     .shadow(radius: 2, x: 1, y: 2)
@@ -84,7 +89,7 @@ struct HomeView: View {
                             .font(.custom("Futura", size: 18))
                             .foregroundColor(.black)
                         
-                        }.frame(width: 300, height: 50)
+                        }.frame(width: 300, height: 60)
                         .background(Color.white)
                     .cornerRadius(10)
                     .shadow(radius: 2, x: 1, y: 2)
@@ -102,7 +107,7 @@ struct HomeView: View {
                                 .font(.custom("Futura", size: 18))
                                 .foregroundColor(.black)
                             
-                            }.frame(width: 300, height: 50)
+                            }.frame(width: 300, height: 60)
                             .background(Color.white)
                         .cornerRadius(10)
                         .shadow(radius: 2, x: 1, y: 2)
@@ -120,18 +125,19 @@ struct HomeView: View {
                             .font(.custom("Futura", size: 18))
                             .foregroundColor(.black)
                         
-                        }.frame(width: 300, height: 50)
+                        }.frame(width: 300, height: 60)
                         .background(Color.white)
                     .cornerRadius(10)
                     .shadow(radius: 2, x: 1, y: 2)
                         }
-                        Spacer()
-                        Image("BotView").edgesIgnoringSafeArea(.bottom)
+                        
                     }// Actions Buttons
+                    Spacer()
+                    ZStack(){
+                    Rectangle().frame(height: 60).foregroundColor(Color(red: 224/255, green: 144/255, blue: 144/255))
+                    }
                 }
-                .navigationBarTitle("Vive Tunisie")
-            }.background(Color(red: 242/255, green: 242/255, blue: 242/255))
-                .edgesIgnoringSafeArea(.bottom)// THE Vstack
+            }.edgesIgnoringSafeArea(.all)// THE Vstack
         }// Nav View
     }// Body
 }// Screen
