@@ -13,20 +13,15 @@ struct HomeView: View {
         NavigationView{
             
             VStack(){
-                Rectangle().frame(height: 120).foregroundColor(.white)
-                Text("Vive Tunisie")
-                    .font(.custom("Optima", size: 40))
-                    .bold()
-   
                     Text("Signalement des dysfonctionnements en espaces publiques").bold()
-                        .font(.custom("Optima", size: 20))
+                        .font(.custom("Optima", size: 16))
                         .multilineTextAlignment(.center)
                         .lineLimit(3)
                         .foregroundColor(.black)
                         .padding()
 
                 VStack(spacing: 10){
-                    Text("Pour suivre vos signalements, vous devez :")
+                    Text("Pour suivre vos signalements, vous devez ")
                     .font(.custom("Optima", size: 20))
                                            .multilineTextAlignment(.leading)
                                            .lineLimit(2)
@@ -41,7 +36,7 @@ struct HomeView: View {
                     }.padding(.bottom, 10)
                     
                     VStack(spacing:20){
-                    NavigationLink(destination: Text("New Sign")){
+                        NavigationLink(destination: NewSignalView()){
                         HStack(spacing:25){
                             Image("NewSignal")
                                 .renderingMode(.original)
@@ -133,11 +128,10 @@ struct HomeView: View {
                         
                     }// Actions Buttons
                     Spacer()
-                    ZStack(){
-                    Rectangle().frame(height: 60).foregroundColor(Color(red: 224/255, green: 144/255, blue: 144/255))
-                    }
+
                 }
-            }.edgesIgnoringSafeArea(.all)// THE Vstack
+            }.background(Color("secBackground")).edgesIgnoringSafeArea(.bottom)// THE Vstack
+                .navigationBarTitle("Vive Tunisie", displayMode: .large)
         }// Nav View
     }// Body
 }// Screen

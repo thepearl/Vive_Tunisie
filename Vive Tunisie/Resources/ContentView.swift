@@ -9,16 +9,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var gov = Gov()
     var body: some View {
-     HomeView()
-}
+        HomeView()
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             ContentView().colorScheme(.light)
-            ContentView().colorScheme(.dark)
         }
         
     }

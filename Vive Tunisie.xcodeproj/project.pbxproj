@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A022CD82467648D0037FC8A /* municipalites.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 7A022CD72467648D0037FC8A /* municipalites.geojson */; };
 		7A05344324125D1A00814342 /* LoginCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A05344224125D1A00814342 /* LoginCard.swift */; };
 		7A05344524125E3700814342 /* SignUpCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A05344424125E3700814342 /* SignUpCard.swift */; };
+		7A28EDBA2461FE8B00B7A2E4 /* FillDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A28EDB92461FE8B00B7A2E4 /* FillDetailsView.swift */; };
 		7A32C5E22441FE82008F7615 /* Tabitem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A32C5E12441FE82008F7615 /* Tabitem.swift */; };
 		7A43522624113DB4003377F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43522524113DB4003377F1 /* AppDelegate.swift */; };
 		7A43522824113DB4003377F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43522724113DB4003377F1 /* SceneDelegate.swift */; };
@@ -17,9 +19,11 @@
 		7A43522F24113DB5003377F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A43522E24113DB5003377F1 /* Preview Assets.xcassets */; };
 		7A43523224113DB5003377F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A43523024113DB5003377F1 /* LaunchScreen.storyboard */; };
 		7A43523A24113DD9003377F1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43523924113DD9003377F1 /* LoginView.swift */; };
-		7A43523D24113E01003377F1 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A43523C24113E01003377F1 /* SplashView.swift */; };
 		7A47C1B1242CFE6C0048A0EA /* UserCRUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A47C1B0242CFE6C0048A0EA /* UserCRUD.swift */; };
+		7A5047412466237A000BC672 /* Valider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5047402466237A000BC672 /* Valider.swift */; };
 		7A62A6E3241A3F1900D7C41D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A62A6E2241A3F1900D7C41D /* User.swift */; };
+		7A6995912460C910009FF624 /* NewSignalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6995902460C910009FF624 /* NewSignalView.swift */; };
+		7A69959724610AED009FF624 /* AlertImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A69959624610AED009FF624 /* AlertImagePicker.swift */; };
 		7A8B1A71243B6CA400893AE5 /* SlideBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8B1A70243B6CA400893AE5 /* SlideBarView.swift */; };
 		7A8C5C69245F57E8002826DD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C5C68245F57E8002826DD /* HomeView.swift */; };
 		7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */; };
@@ -66,14 +70,19 @@
 		7AED4E1D241147EC00A8C052 /* Futura Book font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4E0A241147EC00A8C052 /* Futura Book font.ttf */; };
 		7AED4E1E241147EC00A8C052 /* Futura Bold font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AED4E0B241147EC00A8C052 /* Futura Bold font.ttf */; };
 		7AF036BD24291B390026F885 /* TasksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF036BC24291B390026F885 /* TasksCollectionView.swift */; };
+		7AF37C83246361680092CDEE /* EditDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF37C82246361680092CDEE /* EditDescriptionView.swift */; };
+		7AF37C85246370BD0092CDEE /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF37C84246370BD0092CDEE /* Signal.swift */; };
+		7AF37C8A24637FC90092CDEE /* Government.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF37C8924637FC90092CDEE /* Government.swift */; };
 		9DFFFC27FAA3D5513EB6C3A9 /* Pods_Vive_Tunisie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC7D639124E4B922B451D0B /* Pods_Vive_Tunisie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A15325303B8A78E8A1996C2 /* Pods-Vive Tunisie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vive Tunisie.debug.xcconfig"; path = "Target Support Files/Pods-Vive Tunisie/Pods-Vive Tunisie.debug.xcconfig"; sourceTree = "<group>"; };
 		6EC7D639124E4B922B451D0B /* Pods_Vive_Tunisie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vive_Tunisie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A022CD72467648D0037FC8A /* municipalites.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = municipalites.geojson; sourceTree = "<group>"; };
 		7A05344224125D1A00814342 /* LoginCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCard.swift; sourceTree = "<group>"; };
 		7A05344424125E3700814342 /* SignUpCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCard.swift; sourceTree = "<group>"; };
+		7A28EDB92461FE8B00B7A2E4 /* FillDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillDetailsView.swift; sourceTree = "<group>"; };
 		7A32C5E12441FE82008F7615 /* Tabitem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabitem.swift; sourceTree = "<group>"; };
 		7A43522224113DB4003377F1 /* Vive Tunisie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vive Tunisie.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A43522524113DB4003377F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,9 +93,11 @@
 		7A43523124113DB5003377F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A43523324113DB5003377F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A43523924113DD9003377F1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		7A43523C24113E01003377F1 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		7A47C1B0242CFE6C0048A0EA /* UserCRUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCRUD.swift; sourceTree = "<group>"; };
+		7A5047402466237A000BC672 /* Valider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valider.swift; sourceTree = "<group>"; };
 		7A62A6E2241A3F1900D7C41D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7A6995902460C910009FF624 /* NewSignalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSignalView.swift; sourceTree = "<group>"; };
+		7A69959624610AED009FF624 /* AlertImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertImagePicker.swift; sourceTree = "<group>"; };
 		7A8B1A70243B6CA400893AE5 /* SlideBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideBarView.swift; sourceTree = "<group>"; };
 		7A8C5C68245F57E8002826DD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
@@ -132,6 +143,9 @@
 		7AED4E0A241147EC00A8C052 /* Futura Book font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Book font.ttf"; sourceTree = "<group>"; };
 		7AED4E0B241147EC00A8C052 /* Futura Bold font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Futura Bold font.ttf"; sourceTree = "<group>"; };
 		7AF036BC24291B390026F885 /* TasksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCollectionView.swift; sourceTree = "<group>"; };
+		7AF37C82246361680092CDEE /* EditDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDescriptionView.swift; sourceTree = "<group>"; };
+		7AF37C84246370BD0092CDEE /* Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		7AF37C8924637FC90092CDEE /* Government.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Government.swift; sourceTree = "<group>"; };
 		98C8063E6EC880B8DA6247C9 /* Pods-Vive Tunisie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vive Tunisie.release.xcconfig"; path = "Target Support Files/Pods-Vive Tunisie/Pods-Vive Tunisie.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +162,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A28EDB42461A2BC00B7A2E4 /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				7A43522724113DB4003377F1 /* SceneDelegate.swift */,
+				7A43522524113DB4003377F1 /* AppDelegate.swift */,
+				7A43523324113DB5003377F1 /* Info.plist */,
+				7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
 		7A43521924113DB4003377F1 = {
 			isa = PBXGroup;
 			children = (
@@ -169,9 +194,9 @@
 		7A43522424113DB4003377F1 /* Vive Tunisie */ = {
 			isa = PBXGroup;
 			children = (
+				7A022CD72467648D0037FC8A /* municipalites.geojson */,
+				7A28EDB42461A2BC00B7A2E4 /* Configurations */,
 				7AE090FC2459C16D00BF6665 /* Resources */,
-				7A43523324113DB5003377F1 /* Info.plist */,
-				7AE30D1E2418180A00C89F0F /* GoogleService-Info.plist */,
 				7A8B1A6D243B669300893AE5 /* Animations */,
 				7AED4DB0241147A200A8C052 /* Fonts */,
 				7A62A6E1241A3EFE00D7C41D /* Models */,
@@ -193,12 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				7A43523924113DD9003377F1 /* LoginView.swift */,
-				7A43523C24113E01003377F1 /* SplashView.swift */,
 				7A05344224125D1A00814342 /* LoginCard.swift */,
 				7A05344424125E3700814342 /* SignUpCard.swift */,
 				7AA997A6241BC94900FD7EF8 /* SwiftUIView.swift */,
-				7AC304902437772B001B60AB /* LottieView.swift */,
-				7AC304922437797C001B60AB /* LoadingView.swift */,
 				7AE090FD2459CC4F00BF6665 /* AccountCreatedView.swift */,
 			);
 			path = Login;
@@ -209,6 +231,8 @@
 			children = (
 				7A62A6E2241A3F1900D7C41D /* User.swift */,
 				7A47C1B0242CFE6C0048A0EA /* UserCRUD.swift */,
+				7AF37C84246370BD0092CDEE /* Signal.swift */,
+				7AF37C8924637FC90092CDEE /* Government.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				7AC3048B243775C7001B60AB /* loading.json */,
+				7AC304922437797C001B60AB /* LoadingView.swift */,
+				7AC304902437772B001B60AB /* LottieView.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -225,6 +251,10 @@
 			isa = PBXGroup;
 			children = (
 				7A8C5C68245F57E8002826DD /* HomeView.swift */,
+				7A6995902460C910009FF624 /* NewSignalView.swift */,
+				7A28EDB92461FE8B00B7A2E4 /* FillDetailsView.swift */,
+				7AF37C82246361680092CDEE /* EditDescriptionView.swift */,
+				7A5047402466237A000BC672 /* Valider.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -244,9 +274,8 @@
 			isa = PBXGroup;
 			children = (
 				7A43522924113DB4003377F1 /* ContentView.swift */,
-				7A43522724113DB4003377F1 /* SceneDelegate.swift */,
-				7A43522524113DB4003377F1 /* AppDelegate.swift */,
 				7A43522B24113DB5003377F1 /* Assets.xcassets */,
+				7A69959624610AED009FF624 /* AlertImagePicker.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -417,6 +446,7 @@
 				7AED4DED241147E200A8C052 /* Helvetica85Heavy_22449.ttf in Resources */,
 				7AED4E12241147EC00A8C052 /* Futura XBlk BT.ttf in Resources */,
 				7A43522F24113DB5003377F1 /* Preview Assets.xcassets in Resources */,
+				7A022CD82467648D0037FC8A /* municipalites.geojson in Resources */,
 				7AED4E17241147EC00A8C052 /* Futura Heavy Italic font.ttf in Resources */,
 				7AED4DF3241147E200A8C052 /* Helvetica45Light_22437.ttf in Resources */,
 				7AED4E16241147EC00A8C052 /* futura light bt.ttf in Resources */,
@@ -514,15 +544,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A43522624113DB4003377F1 /* AppDelegate.swift in Sources */,
+				7AF37C8A24637FC90092CDEE /* Government.swift in Sources */,
 				7A05344324125D1A00814342 /* LoginCard.swift in Sources */,
 				7A43522824113DB4003377F1 /* SceneDelegate.swift in Sources */,
 				7AF036BD24291B390026F885 /* TasksCollectionView.swift in Sources */,
-				7A43523D24113E01003377F1 /* SplashView.swift in Sources */,
+				7A28EDBA2461FE8B00B7A2E4 /* FillDetailsView.swift in Sources */,
 				7AE090FE2459CC4F00BF6665 /* AccountCreatedView.swift in Sources */,
+				7A5047412466237A000BC672 /* Valider.swift in Sources */,
 				7AA997A7241BC94900FD7EF8 /* SwiftUIView.swift in Sources */,
+				7A69959724610AED009FF624 /* AlertImagePicker.swift in Sources */,
+				7AF37C85246370BD0092CDEE /* Signal.swift in Sources */,
 				7A43523A24113DD9003377F1 /* LoginView.swift in Sources */,
 				7AED30982426678600F56FF9 /* DashboardView.swift in Sources */,
 				7A8C5C69245F57E8002826DD /* HomeView.swift in Sources */,
+				7A6995912460C910009FF624 /* NewSignalView.swift in Sources */,
 				7AC304932437797C001B60AB /* LoadingView.swift in Sources */,
 				7A62A6E3241A3F1900D7C41D /* User.swift in Sources */,
 				7A47C1B1242CFE6C0048A0EA /* UserCRUD.swift in Sources */,
@@ -531,6 +566,7 @@
 				7A32C5E22441FE82008F7615 /* Tabitem.swift in Sources */,
 				7A05344524125E3700814342 /* SignUpCard.swift in Sources */,
 				7A8B1A71243B6CA400893AE5 /* SlideBarView.swift in Sources */,
+				7AF37C83246361680092CDEE /* EditDescriptionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -652,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -671,7 +707,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Vive Tunisie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Vive Tunisie/Info.plist";
+				INFOPLIST_FILE = "Vive Tunisie/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -679,7 +715,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "wimobi.Vive-Tunisie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -692,7 +728,7 @@
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"Vive Tunisie/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Vive Tunisie/Info.plist";
+				INFOPLIST_FILE = "Vive Tunisie/Configurations/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -700,7 +736,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "wimobi.Vive-Tunisie";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

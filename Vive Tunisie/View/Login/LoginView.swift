@@ -11,17 +11,18 @@ import SwiftUI
 struct LoginView: View {
     @State private var selected=0
     @State var value :CGFloat = 0
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
    
     var body: some View {
-        ZStack(){
+        NavigationView{
+            ZStack(){
             Rectangle()
                 .foregroundColor(Color("Background"))
                 .edgesIgnoringSafeArea(.all)
-            Spacer()
     VStack(){
             Image("LoginIllust")
             .resizable()
-            .frame(width: 200, height: 150)
+            .frame(width: 175, height: 125)
                 .padding(.all, 10)
         VStack(spacing: 15){
         Picker(selection: $selected, label: Text("")){
@@ -41,22 +42,33 @@ struct LoginView: View {
         }.background(Color("secBackground"))
         .cornerRadius(20)
         }
-            Spacer()
+
         
             }
-        .offset(y: -self.value)
-        .animation(.spring()).onAppear(){
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main){ (noti) in
-                let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-                let height = value.height
-                self.value = height
-            }
-            NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main){ (n) in
-                           
-                           self.value = 0
+            .offset(y: -self.value)
+                .animation(.spring()).onAppear(){
+                      NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main){ (noti) in
+                          let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                          let height = value.height
+                          self.value = height
+                      }
+                      NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main){ (n) in
+                                self.value = 0
+                }
+            }    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarItems(leading: Button(action : {
+                       self.mode.wrappedValue.dismiss()
+                       }){
+                           HStack(spacing: 4){
+                               Image(systemName: "chevron.compact.left")
+                                   .foregroundColor(.white)
+                               Text("Acceuil")
+                               .foregroundColor(.white)
+                               }
+                       })
         }
-        }
-        }
+    }
 }
 
 

@@ -17,6 +17,7 @@ struct SignUpCard: View {
     @State private var isActive = false
     @State private var showingAlert = false
     @State var isLoading = false
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
 
     var body: some View {
 
@@ -103,7 +104,7 @@ struct SignUpCard: View {
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 80)
                                 .frame(width: 300, height: 50)
-                                .background(Color("Button"))
+                                .background(Color(red: 224/255, green: 144/255, blue: 144/255))
                                 .cornerRadius(10)
                             
                         }//Button S'inscrire
@@ -128,6 +129,18 @@ struct SignUpCard: View {
              
                         }
                     }
+    .navigationBarHidden(true)
+    .navigationBarBackButtonHidden(true)
+    .navigationBarItems(leading: Button(action : {
+       self.mode.wrappedValue.dismiss()
+       }){
+           HStack(spacing: 4){
+               Image(systemName: "chevron.compact.left")
+                   .foregroundColor(.white)
+               Text("Acceuil")
+               .foregroundColor(.white)
+               }
+       })
                 
         }
     
