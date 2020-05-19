@@ -7,40 +7,45 @@
 //
 
 import Foundation
-struct Collection: Decodable {
-    let type:String
-    let features: [Features]
-}
 
-struct Features: Decodable {
-    let type: String
-    let properties: Properties
-}
-
-struct Properties: Decodable {
-    let id: String
-    let boundary: String
-    let name: String
-}
-
-
-class Gov: ObservableObject {
-    @Published var alertGov = [Collection]()
+struct Movie: Decodable, Identifiable {
+    public var id: Int
+    public var name_ar: String
+    public var name_fr: String
     
-    init() {
+    enum CodingKeys: String, CodingKey {
+           case id = "id"
+           case name_ar = "name_ar"
+           case name_fr = "name_fr"
+        }
+}
+
+public class MovieFetcher: ObservableObject {
+    @Published var movies = [Movie]()
+    
+    init(){
         load()
     }
     
     func load() {
-        let urlBar = Bundle.main.url(forResource: "municipalites", withExtension: "geojson")!
-
-        do {
-            let jsonData = try Data(contentsOf: urlBar)
-            let result = try JSONDecoder().decode(Collection.self, from: jsonData)
-            for feature in result.features {
-                print("boundary", feature.properties.boundary, "name", feature.properties.name)
+        let url = URL(string: "https://gist.githubusercontent.com/thepearl/8d00720cbfe5affc95d8d339aaffc687/raw/ef27a47f0127df244225309098097af2d68973c8/Gov.json")!
+    
+        URLSession.shared.dataTask(with: url) {(data,response,error) in
+            do {
+                if let d = data {
+                    let decodedLists = try JSONDecoder().decode([Movie].self, from: d)
+                    DispatchQueue.main.async {
+                        self.movies = decodedLists
+                    }
+                }else {
+                    print("No Data")
+                }
+            } catch {
+                print ("Error")
             }
-        } catch { print("Error while parsing: \(error)") }
+            
+        }.resume()
+         
     }
 }
 

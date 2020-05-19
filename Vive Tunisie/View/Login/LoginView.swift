@@ -15,58 +15,47 @@ struct LoginView: View {
    
     var body: some View {
         NavigationView{
-            ZStack(){
-            Rectangle()
-                .foregroundColor(Color("Background"))
-                .edgesIgnoringSafeArea(.all)
-    VStack(){
-            Image("LoginIllust")
-            .resizable()
-            .frame(width: 175, height: 125)
-                .padding(.all, 10)
-        VStack(spacing: 15){
-        Picker(selection: $selected, label: Text("")){
-            
-            Text("Inscrivez vous").tag(1)
-            
-            Text("Connectez Vous").tag(0)
-            
-        }.pickerStyle(SegmentedPickerStyle())
-            
-            if(self.selected == 0){
-                LoginCard()
-            }
-            else{
-                SignUpCard()
-            }
-        }.background(Color("secBackground"))
-        .cornerRadius(20)
-        }
-
-        
-            }
-            .offset(y: -self.value)
-                .animation(.spring()).onAppear(){
-                      NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main){ (noti) in
-                          let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
-                          let height = value.height
-                          self.value = height
-                      }
-                      NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main){ (n) in
-                                self.value = 0
+            VStack(){
+                    VStack(){
+                    Image("LoginIllust")
+                    .resizable()
+                    .frame(width: 175, height: 125)
+                    .padding(.all, 10)
+                VStack(spacing: 15){
+                    Picker(selection: $selected, label: Text("")){
+                    
+                    Text("Inscrivez vous").tag(1)
+                    
+                    Text("Connectez Vous").tag(0)
+                    
+                }.pickerStyle(SegmentedPickerStyle())
+                    
+                    if(self.selected == 0){
+                        LoginCard()
+                    }
+                    else{
+                        SignUpCard()
+                    }
+                }.background(Color("secBackground"))
+                .cornerRadius(20)
                 }
-            }    .navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
-                    .navigationBarItems(leading: Button(action : {
-                       self.mode.wrappedValue.dismiss()
-                       }){
-                           HStack(spacing: 4){
-                               Image(systemName: "chevron.compact.left")
-                                   .foregroundColor(.white)
-                               Text("Acceuil")
-                               .foregroundColor(.white)
-                               }
-                       })
+                .offset(y: -self.value)
+                                       .animation(.spring()).onAppear(){
+                                             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main){ (noti) in
+                                                 let value = noti.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect
+                                                 let height = value.height
+                                                 self.value = height
+                                             }
+                                             NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main){ (n) in
+                                                       self.value = 0
+                                       }
+                
+                    }
+                   
+            }   
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
         }
     }
 }

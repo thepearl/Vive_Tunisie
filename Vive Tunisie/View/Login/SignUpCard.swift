@@ -10,6 +10,7 @@ import SwiftUI
 import Firebase
 
 struct SignUpCard: View {
+    
     @State private var email = ""
     @State private var pass = ""
     @State private var name = ""
@@ -80,7 +81,7 @@ struct SignUpCard: View {
                 .cornerRadius(15)
               
                 VStack(){
-                    NavigationLink(destination: AccountCreatedView(), isActive: self.$isActive){
+                    NavigationLink(destination: HomeOnLoginView(), isActive: self.$isActive){
                         Button(action: {
                             if(self.name != "" && self.pass != "" && self.email != "" && self.gov != ""  ){
                            self.CreateUser(name: self.name,pass : self.pass,email: self.email,gov : self.gov) { (status) in
@@ -110,6 +111,7 @@ struct SignUpCard: View {
                         }//Button S'inscrire
                             .alert(isPresented: $showingAlert){
                                Alert(title: Text("Alerte"), message: Text("Veuillez completer tous les coordonnées"), dismissButton: .default(Text("Revenir")))
+                                
                         }
                     }
 
@@ -148,18 +150,18 @@ struct SignUpCard: View {
 func CreateUser(name: String,pass : String,email: String,gov : String,completion : @escaping (Bool)-> Void){
     
     let db = Firestore.firestore()
-    
     Auth.auth().createUser(withEmail: email, password: pass){ authResult, error in
         if(error != nil){
             let uid = Auth.auth().currentUser?.uid
-        db.collection("users").document(uid!).setData(["name":name,"pass":pass,"email":email,"uid":uid!]) { (err) in
-                               
-                               if err != nil{
-                                   
-                                   print((err?.localizedDescription)!)
-                                   return
-                               }
-                               
+            db.collection("users").document(uid!).setData(["name":name,"pass":pass,"email":email,"uid":uid!]) {
+                (err) in
+                    if err != nil{
+                        print((err?.localizedDescription)!)
+                            return
+                            }
+                               let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                               changeRequest?.displayName = name
+                
                                completion(true)
                                
                                UserDefaults.standard.set(true, forKey: "status")

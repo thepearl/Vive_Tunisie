@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         let appearance = UINavigationBarAppearance()
         
-        
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 224/255, green: 144/255, blue: 144/255, alpha: 1)
         
@@ -31,8 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             .font: UIFont.init(name: "Futura", size: 30)!
         ]
         
+        
         appearance.largeTitleTextAttributes = attrs
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().tintColor = UIColor.systemGray
         
         
         

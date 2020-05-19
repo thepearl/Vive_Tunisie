@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct User: Identifiable{
-    var id: String
-    var email: String
-    var pass: String
-    var name: String
-    var gov: String
+class User {
+    var uid: String
+    var email: String?
+    var displayName: String?
+
+    init(uid: String, displayName: String?, email: String?) {
+        self.uid = uid
+        self.email = email
+        self.displayName = displayName
+    }
+
 }

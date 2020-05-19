@@ -9,7 +9,7 @@
 import SwiftUI
 import FBSDKLoginKit
 import Firebase
-import GoogleSignIn
+import ExytePopupView
 
 struct LoginCard: View {
 
@@ -21,9 +21,12 @@ struct LoginCard: View {
     @State private var showingAlert = false
     @State var isLoading = false
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-
+    
+    
+       
     var body: some View {
-        VStack(spacing: 10){
+
+            VStack(spacing: 10){
             HStack{
             Image("Email")
                 .resizable()
@@ -64,14 +67,11 @@ struct LoginCard: View {
               
                 //Loading View
                 
-                if isLoading{
-                    
-                               LoadingView()
-                           }
+              
                 
             } // Mot de passe
            
-           NavigationLink(destination: HomeView(), isActive: self.$isActive){
+           NavigationLink(destination: HomeOnLoginView(), isActive: self.$isActive){
                           Button(action: {
                             self.isLoading = true
                               Auth.auth().signIn(withEmail: self.email, password: self.pass){ (authResult, error) in
@@ -79,25 +79,31 @@ struct LoginCard: View {
                                     
                                       print(error!)
                                         self.showingAlert = true
-                                       self.isLoading = false
+                                        self.isLoading = false
                                   }
                                     
                                   else{
                                       print(authResult!)
                                       self.isActive = true
                                    // self.isLoading = false
-                                                                      }
+                                    }
                               }
                             
                             
                           }){
-                              Text("Se Connecter")
+                            if isLoading{
+                                    LoadingView()
+                                }
+                            else{
+                                Text("Se Connecter")
                                   .font(.custom("futura", size: 15))
                                   .foregroundColor(.white)
                                   .padding(.horizontal, 80)
                                   .frame(width: 300, height: 50)
                                   .background(Color(red: 224/255, green: 144/255, blue: 144/255))
                                 .cornerRadius(10)
+                            }
+                              
                               
                           }.alert(isPresented: self.$showingAlert){
                             Alert(title: Text("Alerte"), message: Text("Veuillez Verifier vos coordonnées"), dismissButton: .default(Text("Revenir")))
@@ -134,9 +140,11 @@ struct LoginCard: View {
                 }.padding(.bottom, 15)
             }   // Conditions Generale   
         }
+                
         .frame(alignment: .topLeading)
         .navigationBarHidden(true)
         .navigationBarBackButtonHidden(true)
+        
         .navigationBarItems(leading: Button(action : {
            self.mode.wrappedValue.dismiss()
            }){
@@ -147,10 +155,10 @@ struct LoginCard: View {
                    .foregroundColor(.white)
                    }
            })
-
+        
+    }
 }
 
-}
 
 struct loginViaFacebook : UIViewRepresentable {
     
