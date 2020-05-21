@@ -97,8 +97,8 @@ struct UserGuideView: View {
                             .multilineTextAlignment(.leading)
                             .lineLimit(8)
                             .frame(height: 125)
-                            .padding(.leading, 10)
-                            .padding(.trailing, 10)
+                            .padding(.leading, 15)
+                            .padding(.trailing, 15)
 
                         }
                     }

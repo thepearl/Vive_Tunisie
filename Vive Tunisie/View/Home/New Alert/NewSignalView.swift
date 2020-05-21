@@ -68,11 +68,10 @@ struct NewSignalView: View {
                            if self.isLoading{
                                VStack(spacing:10){
                                    Text("Veuillez attendre jusqu'à ce que l'image est importée")
-                                   .font(.custom("Futura", size: 18))
+                                   .font(.custom("Futura", size: 16))
                                    .multilineTextAlignment(.center)
-                                   .lineLimit(4)
-                                   LoadingView()
-                               }
+                                   UploadingView()
+                                    }.frame(width: 300)
                                }
                            }
                            Spacer()
@@ -244,7 +243,6 @@ struct NewSignalView: View {
         
     }
 }
-
 
 struct GradientBackgroundStyle: ButtonStyle {
  
